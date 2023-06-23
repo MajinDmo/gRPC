@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+package talk;
+
+
+service Talk {
+	rpc ClientIdentifier(ClientIdentifierRequest) returns (ClientIdentifierResponse);
+}
+	message ClientIdentifierRequest {
+		int32 ClientId = 1;
+		string ComputerNumber = 2; //computer number is local host number 
+		string name = 3;
+	}
+
+	message ClientIdentifierResponse {
+		string message = 1;
+	}
+//example of defining services for protos
+
+// Existing message definitions...
+
+// New service definition
+//service MyNewService {
+  // Define methods for the new service
+  //rpc DoSomething(DoSomethingRequest) returns (DoSomethingResponse);
+
+
+// New message definitions...
+//message DoSomethingRequest {
+  // Request message fields...
+
+
+//message DoSomethingResponse {
+  // Response message fields...
+
+
+
+  //ask clients to provide local host number, but for now assign random numbers
