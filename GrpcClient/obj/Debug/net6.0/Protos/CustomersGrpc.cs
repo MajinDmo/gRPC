@@ -74,43 +74,69 @@ namespace GrpcServer {
       get { return global::GrpcServer.CustomersReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Customer</summary>
-    [grpc::BindServiceMethod(typeof(Customer), "BindService")]
-    public abstract partial class CustomerBase
+    /// <summary>Client for Customer</summary>
+    public partial class CustomerClient : grpc::ClientBase<CustomerClient>
     {
+      /// <summary>Creates a new client for Customer</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServer.CustomerModel> GetCustomerInfo(global::GrpcServer.CustomerLookupModel request, grpc::ServerCallContext context)
+      public CustomerClient(grpc::ChannelBase channel) : base(channel)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+      /// <summary>Creates a new client for Customer that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public CustomerClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected CustomerClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected CustomerClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task GetNewCustomers(global::GrpcServer.NewCustomerRequest request, grpc::IServerStreamWriter<global::GrpcServer.CustomerModel> responseStream, grpc::ServerCallContext context)
+      public virtual global::GrpcServer.CustomerModel GetCustomerInfo(global::GrpcServer.CustomerLookupModel request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return GetCustomerInfo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-
-    }
-
-    /// <summary>Creates service definition that can be registered with a server</summary>
-    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(CustomerBase serviceImpl)
-    {
-      return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetCustomerInfo, serviceImpl.GetCustomerInfo)
-          .AddMethod(__Method_GetNewCustomers, serviceImpl.GetNewCustomers).Build();
-    }
-
-    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
-    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
-    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
-    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, CustomerBase serviceImpl)
-    {
-      serviceBinder.AddMethod(__Method_GetCustomerInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.CustomerLookupModel, global::GrpcServer.CustomerModel>(serviceImpl.GetCustomerInfo));
-      serviceBinder.AddMethod(__Method_GetNewCustomers, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.NewCustomerRequest, global::GrpcServer.CustomerModel>(serviceImpl.GetNewCustomers));
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcServer.CustomerModel GetCustomerInfo(global::GrpcServer.CustomerLookupModel request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetCustomerInfo, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.CustomerModel> GetCustomerInfoAsync(global::GrpcServer.CustomerLookupModel request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetCustomerInfoAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.CustomerModel> GetCustomerInfoAsync(global::GrpcServer.CustomerLookupModel request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetCustomerInfo, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.CustomerModel> GetNewCustomers(global::GrpcServer.NewCustomerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetNewCustomers(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.CustomerModel> GetNewCustomers(global::GrpcServer.NewCustomerRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetNewCustomers, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override CustomerClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new CustomerClient(configuration);
+      }
     }
 
   }

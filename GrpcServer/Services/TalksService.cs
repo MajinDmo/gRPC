@@ -15,8 +15,9 @@ namespace GrpcServer.Services
         {
             return Task.FromResult(new ClientIdentifierResponse
             {
-                Message = "Hello, your computer number is " + request.ComputerNumber
-            });
+                Message = "Hello, your computer number is: " + request.ComputerNumber
+                
+            }) ;
         }
     }
 }

@@ -103,7 +103,7 @@ namespace GrpcServer {
     public const int ComputerNumberFieldNumber = 2;
     private string computerNumber_ = "";
     /// <summary>
-    ///computer number is local host number 
+    ///computer number is local host number, this will make sense later
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

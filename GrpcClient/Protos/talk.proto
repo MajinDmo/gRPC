@@ -9,7 +9,7 @@ service Talk {
 }
 	message ClientIdentifierRequest {
 		int32 ClientId = 1;
-		string ComputerNumber = 2; //computer number is local host number 
+		string ComputerNumber = 2; //computer number is local host number, this will make sense later
 		string name = 3;
 	}
 

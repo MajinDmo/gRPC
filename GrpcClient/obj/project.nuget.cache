@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kqDp3zIFSpvHLYjmKMJiMWFFKJ4RxG9BovM3lhJ/HFC+haZ7LfGJGa1MeQO5n+ECizORibmpvded3mS2uNtdyg==",
+  "dgSpecHash": "xNwuKOMG5uu5kOmlzmx4T0BgQg/QPjn5rwPP3gg9tFw5I/7SE9OWZsIN8RZCYViz4INxwz0KSklwkoGnr3HX4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dmo\\source\\repos\\GrpcDemo\\GrpcClient\\GrpcClient.csproj",
   "expectedPackageFiles": [

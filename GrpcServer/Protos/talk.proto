@@ -3,7 +3,7 @@ syntax = "proto3";
 option csharp_namespace = "GrpcServer";
 package talk;
 
-
+//this was my original idea for id'ing PC's, was eventually scrapped in favor of websockets
 service Talk {
 	rpc ClientIdentifier(ClientIdentifierRequest) returns (ClientIdentifierResponse);
 }
@@ -15,6 +15,7 @@ service Talk {
 
 	message ClientIdentifierResponse {
 		string message = 1;
+		
 	}
 //example of defining services for protos
 

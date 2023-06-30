@@ -8,6 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace GrpcServer {
+  /// <summary>
+  ///this was my original idea for id'ing PC's, was eventually scrapped in favor of websockets
+  /// </summary>
   public static partial class Talk
   {
     static readonly string __ServiceName = "talk.Talk";
